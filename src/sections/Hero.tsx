@@ -17,8 +17,25 @@ interface HeroProps {
 }
 
 export default function Hero({ showAreasButton = false, pageTitle, hideContactButton = false }: HeroProps){
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  // Get starting image index based on page
+  const getStartingImageIndex = (title?: string) => {
+    switch (title) {
+      case 'Áreas de Práctica': return 1
+      case 'Nosotros': return 2
+      case 'Noticias': return 3
+      case 'Contacto': return 4
+      case 'Firmas Asociadas': return 5
+      default: return 0 // Home page starts with first image
+    }
+  }
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(getStartingImageIndex(pageTitle))
   const [animationKey, setAnimationKey] = useState(0)
+
+  // Update starting image when page changes
+  useEffect(() => {
+    setCurrentImageIndex(getStartingImageIndex(pageTitle))
+  }, [pageTitle])
 
   useEffect(() => {
     const interval = setInterval(() => {
