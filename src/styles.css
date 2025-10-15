@@ -83,13 +83,13 @@ section[id] {
 
 .navbar{
   position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s ease, box-shadow .3s ease;
-  padding:18px 0;background:#6441a4 !important;
+  padding:18px 0;background:transparent;
 }
 .navbar-inner{display:flex;align-items:center;justify-content:space-between}
 .nav-links{display:flex;gap:22px;align-items:center}
 
 .navbar--scrolled{
-  background:red !important;
+  background:#6441a4 !important;
   box-shadow:0 10px 30px rgba(0,0,0,0.08) !important;
 }
 .navbar--scrolled .nav-link{color:white !important}
@@ -625,7 +625,7 @@ header.navbar--scrolled{ background:var(--primary) !important; }
 }
 
 @media (max-width: 980px){
-  .navbar:not(.navbar--scrolled){ background: var(--primary); box-shadow: none; }
+  .navbar{ background: var(--primary) !important; box-shadow: none; }
   .navbar:not(.navbar--scrolled) .nav-logo span{ color:#fff; }
   .navbar:not(.navbar--scrolled) .nav-link{ color:#fff; }
   .navbar--scrolled{ background: #6441a4 !important; }
