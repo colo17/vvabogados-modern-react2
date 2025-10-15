@@ -124,7 +124,12 @@ export default function PracticeAreas(){
   }
   
   return (
-    <section id="areas" className="section scroll-animate-right" ref={sectionRef}>
+      <section 
+    id="areas-practica" 
+    className="section scroll-animate-up" 
+    style={{ paddingTop: '80px', paddingBottom: '60px' }}
+    ref={sectionRef}
+  >
       <div className="container">
         <h2 className="section-title">Áreas de práctica</h2>
         <p className="section-desc">Servicios prestados en Uruguay y mediante una red de corresponsales en el exterior.</p>

@@ -23,7 +23,7 @@ export default function Footer(){
             <div style={{fontWeight:700, marginBottom:8}}>Contacto</div>
             <div>Miraflores 1445 Of. 203</div>
             <div>Montevideo — Uruguay</div>
-            <div style={{marginTop:8}}>Tel: (+598) 2603 0997</div>
+            <div style={{marginTop:8}}>Tel: (+598) 2603 0997 / (+598) 94 519 555</div>
             <div style={{marginTop:4}}>Email: veronicavanrell@vvabogados.com.uy</div>
           </div>
         </div>

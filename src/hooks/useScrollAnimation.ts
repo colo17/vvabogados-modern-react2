@@ -8,7 +8,8 @@ export function useScrollAnimation(threshold = 0.1) {
     if (!element) return
 
     const rect = element.getBoundingClientRect()
-    const isVisible = rect.top < window.innerHeight && rect.bottom > 0
+    const triggerPoint = window.innerHeight * 0.8 // Trigger when 80% of viewport height
+    const isVisible = rect.top < triggerPoint && rect.bottom > 0
 
     if (isVisible) {
       // Element is in viewport - animate in
@@ -16,7 +17,7 @@ export function useScrollAnimation(threshold = 0.1) {
       element.classList.add('animate-in')
     } else {
       // Element is not visible
-      if (rect.top > window.innerHeight) {
+      if (rect.top > triggerPoint) {
         // Element is below viewport - reset to initial state
         element.classList.remove('animate-in')
         element.classList.remove('animate-out')
@@ -48,8 +49,8 @@ export function useScrollAnimation(threshold = 0.1) {
     }
 
     const observer = new IntersectionObserver(handleIntersection, {
-      threshold: [0, 0.1],
-      rootMargin: '100px 0px 100px 0px'
+      threshold: [0, 0.1, 0.3, 0.5],
+      rootMargin: '200px 0px 200px 0px'
     })
 
     const currentElement = elementRef.current

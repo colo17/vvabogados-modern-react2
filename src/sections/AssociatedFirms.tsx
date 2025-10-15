@@ -57,7 +57,7 @@ export default function AssociatedFirms(){
   const atEnd = index >= FIRMS.length - 1;
 
   return (
-    <section id="estudios-asociados" className="section scroll-animate-right" style={{paddingTop:0,paddingBottom:0,position:'relative'}} ref={sectionRef}>
+    <section id="estudios-asociados" className="section scroll-animate-right" style={{paddingTop:'80px',paddingBottom:0,position:'relative'}} ref={sectionRef}>
       {!atStart && (
         <button className="assoc-arrow left" onClick={()=>scroll('left')} aria-label="Anterior">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

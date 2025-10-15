@@ -30,7 +30,12 @@ export default function TestimonialsNews(){
   const sectionRef = useScrollAnimation()
   
   return (
-    <section id="noticias" className="section scroll-animate" style={{paddingTop:0}} ref={sectionRef}>
+      <section 
+    id="testimonios-noticias" 
+    className="section scroll-animate-up" 
+    style={{ paddingTop: '80px', paddingBottom: '60px' }}
+    ref={sectionRef}
+  >
       <div className="container grid cols-2">
         <div>
           <span className="badge">Testimonios</span>

@@ -5,7 +5,7 @@ export default function About(){
   const sectionRef = useScrollAnimation()
   
   return (
-    <section id="nosotros" className="section scroll-animate" style={{paddingTop:0}} ref={sectionRef}>
+    <section id="nosotros" className="section scroll-animate" style={{paddingTop:'80px', paddingBottom:'40px'}} ref={sectionRef}>
       <div className="container grid cols-2">
         <div className="card">
           <img src="/images/Grupal fondo gris.jpg" alt="VV Abogados" />

@@ -48,7 +48,12 @@ export default function Contact(){
   }
 
   return (
-    <section id="contacto" className="section scroll-animate-up" ref={sectionRef}>
+      <section 
+    id="contacto" 
+    className="section scroll-animate-up" 
+    style={{ paddingTop: '80px', paddingBottom: '60px' }}
+    ref={sectionRef}
+  >
       <div className="container grid cols-2">
         <div>
           <span className="badge">Contacto</span>

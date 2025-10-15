@@ -1,13 +1,22 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const OFFICE_IMAGES = [
-  '/images/Oficina1.jpg',
-  '/images/Oficina2.jpg',
-  '/images/Oficina3.jpg',
-  '/images/Oficina4.jpg'
+  '/images/team1.jpg',
+  '/images/team2.jpg',
+  '/images/team3.jpg',
+  '/images/team4.jpg',
+  '/images/team5.jpg',
+  '/images/team6.jpg'
 ]
 
-export default function Hero(){
+interface HeroProps {
+  showAreasButton?: boolean;
+  pageTitle?: string;
+  hideContactButton?: boolean;
+}
+
+export default function Hero({ showAreasButton = false, pageTitle, hideContactButton = false }: HeroProps){
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [animationKey, setAnimationKey] = useState(0)
 
@@ -20,6 +29,11 @@ export default function Hero(){
 
     return () => clearInterval(interval)
   }, [])
+
+  // Trigger animation on route changes
+  useEffect(() => {
+    setAnimationKey(prev => prev + 1)
+  }, [pageTitle])
 
   useEffect(() => {
     const heroElement = document.getElementById('inicio')
@@ -78,10 +92,20 @@ export default function Hero(){
             className="hero-logo-mobile"
           />
         </div>
-        <p key={`text-${animationKey}`} className="hero-text-animated">Nuestro compromiso con la excelencia en la protección de la Propiedad Intelectual define cada uno de nuestros pasos, abordamos cada desafío con determinación y pasión.</p>
+        {pageTitle ? (
+          <h1 key={`title-${animationKey}`} className="hero-text-animated" style={{fontSize: '48px', fontWeight: '800', margin: '0 0 40px', color: '#ffffff'}}>
+            {pageTitle}
+          </h1>
+        ) : (
+          <p key={`text-${animationKey}`} className="hero-text-animated">Nuestro compromiso con la excelencia en la protección de la Propiedad Intelectual define cada uno de nuestros pasos, abordamos cada desafío con determinación y pasión.</p>
+        )}
         <div key={`cta-${animationKey}`} className="hero-cta hero-cta-animated">
-          <a href="#contacto" className="button">Agendar consulta</a>
-          <a href="#areas" className="button button--ghost">Áreas de práctica</a>
+          {!hideContactButton && (
+            <Link to="/contacto" className="button">Agendar consulta</Link>
+          )}
+          {showAreasButton && (
+            <Link to="/areas-de-practica" className="button button--ghost">Áreas de práctica</Link>
+          )}
         </div>
       </div>
     </section>
