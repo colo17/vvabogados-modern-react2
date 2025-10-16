@@ -15,45 +15,24 @@ export default function Navbar({ scrolled }: NavbarProps){
     close()
   }
 
-  const handleDirectNavigation = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    close()
-    
-    // Prevent default navigation
-    e.preventDefault()
-    
-    const href = e.currentTarget.href
-    const path = new URL(href).pathname
-    
-    console.log('Direct navigation to:', path)
-    
-    // Force scroll to top BEFORE navigation
-    window.scrollTo(0, 0)
-    document.documentElement.scrollTop = 0
-    document.body.scrollTop = 0
-    
-    console.log('Pre-navigation scroll, scrollY:', window.scrollY)
-    
-    // Navigate using window.location which will cause a full page reload
-    setTimeout(() => {
-      window.location.href = href
-    }, 10)
-  }
+  // Close the mobile panel and let React Router handle the navigation
+  const handleDirectNavigation = () => close()
 
   return (
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="container navbar-inner">
-        <a href="/" className="nav-logo" onClick={handleDirectNavigation}>
+        <Link to="/" className="nav-logo" onClick={handleDirectNavigation}>
           <img src="/images/Logo Horizontal Blanco.png" alt="VV Abogados" height="32" />
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="nav-links nav-desktop">
-          <a className="nav-link" href="/" onClick={handleDirectNavigation}>Inicio</a>
-          <a className="nav-link" href="/areas-de-practica" onClick={handleDirectNavigation}>Áreas</a>
-          <a className="nav-link" href="/nosotros" onClick={handleDirectNavigation}>Nosotros</a>
-          <a className="nav-link" href="/noticias" onClick={handleDirectNavigation}>Noticias</a>
-          <a className="nav-link" href="/firmas-asociadas" onClick={handleDirectNavigation}>Estudios asociados</a>
-          <a className="button" href="/contacto" onClick={handleDirectNavigation}>Contacto</a>
+          <Link className="nav-link" to="/" onClick={handleDirectNavigation}>Inicio</Link>
+          <Link className="nav-link" to="/areas-de-practica" onClick={handleDirectNavigation}>Áreas</Link>
+          <Link className="nav-link" to="/nosotros" onClick={handleDirectNavigation}>Nosotros</Link>
+          <Link className="nav-link" to="/noticias" onClick={handleDirectNavigation}>Noticias</Link>
+          <Link className="nav-link" to="/firmas-asociadas" onClick={handleDirectNavigation}>Estudios asociados</Link>
+          <Link className="button" to="/contacto" onClick={handleDirectNavigation}>Contacto</Link>
         </nav>
 
         {/* Mobile hamburger */}
@@ -72,12 +51,12 @@ export default function Navbar({ scrolled }: NavbarProps){
       {/* Mobile menu panel */}
       {open && (
         <div className="nav-mobile-panel container">
-          <a className="nav-mobile-link" href="/" onClick={handleDirectNavigation}>Inicio</a>
-          <a className="nav-mobile-link" href="/areas-de-practica" onClick={handleDirectNavigation}>Áreas</a>
-          <a className="nav-mobile-link" href="/nosotros" onClick={handleDirectNavigation}>Nosotros</a>
-          <a className="nav-mobile-link" href="/noticias" onClick={handleDirectNavigation}>Noticias</a>
-          <a className="nav-mobile-link" href="/firmas-asociadas" onClick={handleDirectNavigation}>Estudios asociados</a>
-          <a className="button" href="/contacto" onClick={handleDirectNavigation} style={{marginTop:10, width:'100%', justifyContent:'center'}}>Contacto</a>
+          <Link className="nav-mobile-link" to="/" onClick={handleDirectNavigation}>Inicio</Link>
+          <Link className="nav-mobile-link" to="/areas-de-practica" onClick={handleDirectNavigation}>Áreas</Link>
+          <Link className="nav-mobile-link" to="/nosotros" onClick={handleDirectNavigation}>Nosotros</Link>
+          <Link className="nav-mobile-link" to="/noticias" onClick={handleDirectNavigation}>Noticias</Link>
+          <Link className="nav-mobile-link" to="/firmas-asociadas" onClick={handleDirectNavigation}>Estudios asociados</Link>
+          <Link className="button" to="/contacto" onClick={handleDirectNavigation} style={{marginTop:10, width:'100%', justifyContent:'center'}}>Contacto</Link>
         </div>
       )}
     </header>
