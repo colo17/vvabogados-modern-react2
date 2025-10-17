@@ -141,6 +141,44 @@ const TEAM: TeamMember[] = [
     jobDescription: 'Como estudiante de derecho apasionada por la comunicación, me entusiasma formar parte de este estudio jurídico especializado en propiedad intelectual, donde puedo fusionar mi amor por la ley y mi interés por la creación y protección de contenido único y creativo.',
     linkedinUrl: 'https://www.linkedin.com/in/sof%C3%ADa-biatturi-80287122a/'
   },
+
+  // Nuevos integrantes
+  {
+    name: 'Guillermina Balsas',
+    role: 'Departamento de PI',
+    img: '/images/Guille Balsas 1.jpg',
+    modalImg: '/images/Guille Balsas 2.jpg',
+    formation: 'Estudiante de abogacía en la Universidad de la República.',
+    jobDescription: 'En el estudio desempeño tareas vinculadas al área de propiedad intelectual, entre ellas el análisis del boletín de propiedad industrial, oposiciones y confección de informes, entre otras cosas. Lo que me permite profundizar en aspectos técnicos y jurídicos de la materia, fortaleciendo mi desarrollo profesional y aportando una valiosa experiencia para mi futuro.',
+    linkedinUrl: 'https://www.linkedin.com/company/vv-abogados/'
+  },
+  {
+    name: 'Delfina Lacasa',
+    role: 'Departamento de PI',
+    img: '/images/Delfi Lacasa 1.jpg',
+    modalImg: '/images/Delfi Lacasa 2.jpg',
+    formation: 'Estudiante de Marketing y Dirección Comercial en la Universidad ORT Uruguay.',
+    jobDescription: 'Desempeño mi trabajo en el departamento de Propiedad Intelectual, participando activamente en tareas relacionadas con la gestión y protección de marcas, tanto a nivel local como internacional. Mi objetivo es seguir ampliando mis conocimientos en marketing y propiedad intelectual, combinando ambos campos para desarrollar un perfil profesional integral orientado a la estrategia, la gestión de marca y la innovación.',
+    linkedinUrl: 'https://www.linkedin.com/company/vv-abogados/'
+  },
+  {
+    name: 'Luciano Rodal',
+    role: 'Departamento Penal',
+    img: '/images/Lulo Rodal 1.jpg',
+    modalImg: '/images/Lulo Rodal 2.jpg',
+    formation: 'Abogado penalista egresado de la Universidad Católica del Uruguay.',
+    jobDescription: 'Soy un abogado penal convencido de que la defensa no es solo un ejercicio técnico, sino también un compromiso humano. Me defino por la disciplina en el estudio, la estrategia en cada caso y la firmeza frente a la adversidad, pero también por la empatía hacia las personas que confían en mí cuando todo parece estar en contra. Creo en la justicia como un camino de lucha constante: con ética, con convicción y con respeto por la dignidad de cada ser humano.',
+    linkedinUrl: 'https://www.linkedin.com/in/luciano-rodal-229744233/'
+  },
+  {
+    name: 'Agustín Gorla Félix',
+    role: 'Departamento Notarial',
+    img: '/images/Agus Gorla 1.jpg',
+    modalImg: '/images/Agus Gorla 2.jpg',
+    formation: 'Estudiante de la carrera de Notariado en la Facultad de Derecho de la República Oriental del Uruguay, recibido de procurador.',
+    jobDescription: 'Desempeño mi trabajo en el Departamento Notarial e Inmobiliario, donde día a día reafirmo la importancia de la seguridad jurídica que consagra la labor notarial, debiéndose entender como una inversión en tranquilidad y certeza jurídica respecto de los actos y derechos a los que se pone forma y autenticidad. Tomando siempre como premisa que el derecho sigue a la sociedad en constante cambio, y de ello deriva el continuo estudio y constante aprendizaje del derecho y fundamentalmente de su ejercicio. Contando a su vez, con la suerte de estar rodeado de colegas que contribuyen con su experiencia y disposición. En fe de ello, mi objetivo siempre será obtener la confianza del cliente por haberle entregado un asesoramiento integral y una labor eficaz, responsable, sagaz y providente.',
+    linkedinUrl: 'https://www.linkedin.com/in/agust%C3%ADn-gorla-f%C3%A9lix-193633356/'
+  },
 ]
 
 export default function Team(){
